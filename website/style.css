@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.wood-btn {
+  display: inline-block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  color: #b95a56;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 28px;
+  background: #f6d994;
+  border: none;
+  text-shadow: 1.5px 1.5px 0 #471e14;
+  cursor: pointer;
+
+  /* stacked hard-edge "pixel" border, dark to light, outside in */
+  box-shadow:
+    0 0 0 4px #c47848,
+    0 0 0 7px #8d633c,
+    inset 4px 4px 0 rgba(103, 118, 95, 0.25),
+    inset -4px -4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.wood-btn:hover {
+  background: #ffffc0;
+}
+
+.wood-btn:active {
+  background: #a1652c;
+  box-shadow:
+    0 0 0 4px #3f2010,
+    0 0 0 4px #6b3a1a,
+    inset -4px -4px 0 rgba(255, 200, 130, 0.15),
+    inset 4px 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.farm-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 28px;
+  color: #cf7f4c;
+  text-shadow: 2px 2px 0 #471e14;
+  text-align: center;
+}
+
+body {
+    background-image: url('stardew-sky-picture.png');
+    background-size: cover; /* scales image to fill the screen */
+    background-position: center; /* keeps it centered */
+    background-repeat: no-repeat; /* stops it from tiling */
+    background-attachment: fixed; /* keeps it in place when scrolling */
+    min-height: 100vh; /* makes sure body covers full viewport height */
+    margin: 0;
+}
+
+.page-center {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers vertically */
+    align-items: center; /* centers horiztontally*/
+    gap: 24px; /* space between button and heading*/
+}
+
+.questions-font {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 16px;
+  color: #cf7f4c;
+  text-shadow: 2px 2px 0 #471e14;
+  text-align: center;
+}

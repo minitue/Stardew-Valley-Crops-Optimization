@@ -10,6 +10,16 @@ fetch("crops.json")
     console.log(ranked)
 });
 
+function getQuizData() {
+    const data = {
+        day: document.getElementById('day').value,
+        season: document.getElementById('season').value
+        
+    };
+
+    return data;
+}
+
 function qualifying_crops(crop_name, season) {
     const crop = crops_name[crop_name];
     if (!crop.season.includes(season)) {
@@ -113,4 +123,17 @@ function rank_crop(day, season, store = 'General', fertilizer = null, multiseaso
     }
     const sorted_crops = sortResults(Object.entries(crops_profit), sort_by);
     return sorted_crops
+}
+
+let current = 1;
+function nextQuestion() {
+    document.querySelector(`[data-question = "${current}"]`).classList.remove('active');
+    current++;
+    const next = document.querySelector(`[data-question = "${current}"]`);
+    if (next) {
+        next.classList.add('active');
+    } else {
+        pass
+        // show result
+    }
 }

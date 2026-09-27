@@ -1,4 +1,3 @@
-quiz
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,17 +8,54 @@ quiz
         <div class = "quiz-container">
             <div class = "question active" data-question = "1">
                 <h2 class = "questions-font">Input the season and day</h2>
-                <label>Season</label>
+                <label class = "body-font">Season</label>
                 <select name = "season" id = "season">
-                    <option value = "Spring">Spring</option>
+                    <option value = "Spring" >Spring</option>
                     <option value = "Summer">Summer</option>
                     <option value = "Fall">Fall</option>
                     <option value = "Winter">Winter</option>
                 </select>
-                <label>Day</label>
-                <input type = "number" id = "day">
+                <label class = "body-font">Day</label>
+                <input type = "number" id = "day" min = "0" max = "28" maxlength = "2"/>
+                <script>
+                    const dayInput = document.getElementById('day');
+
+                    dayInput.addEventListener('input', () => {
+                        if (parseInt(dayInput.value) > 28) {
+                            dayInput.value = 28;
+                        }
+                    });
+                </script>
+                <button class = "wood-btn" onclick = "nextQuestion()">Continue</button>
+            </div>
+
+            <div class = "question" data-question = "2">
+                <h2 class = "questions-font">Where are you getting seeds?</h2>
+                <button class = "wood-btn" onclick = "nextQuestion()">General Store</button>
+                <button class = "wood-btn" onclick = "nextQuestion()">Joja</button>
+            </div>
+
+            <div class = "question" data-question = "3">
+                <h2 class = "questions-font">Fertlizer?</h2>
+                <button class = "wood-btn" onclick = "nextQuestion()">Speed-Gro</button>
+                <button class = "wood-btn" onclick = "nextQuestion()">Deluxe Speed-Gro</button>
+                <button class = "wood-btn" onclick = "nextQuestion()">Hyper Speed-Gro</button>
+                <button class = "wood-btn" onclick = "nextQuestion()">None</button>
+            </div>
+
+            <div class = "question" data-question = "4">
+                <h2 class = "questions-font">Do you want it to grow through multiple seasons</h2>
+                <button class = "wood-btn" onclick = "nextQuestion()">Yes</button>
+                <button class = "wood-btn" onclick = "nextQuestion()">No</button>
+            </div>
+
+            <div class = "question" data-question = "5">
+                <h2 class = "questions-font">Do you have any of these professions?</h2>
+                <button class = "wood-btn" onclick = "nextQuestion()">Tiller</button>
+                <button class = "wood-btn" onclick = "nextQuestion()">Agriculturalist (must also have Tiller)</button>
+                <button class = "wood-btn" onclick = "nextQuestion()">Neither</button>
             </div>
         </div>
-        
+        <script src = "script.js"></script>
     </body>
 </html>

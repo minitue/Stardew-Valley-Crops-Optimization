@@ -48,7 +48,7 @@
 }
 
 body {
-    background-image: url('stardew-sky-picture.png');
+    background-image: url('images/stardew-sky-picture.png');
     background-size: cover; /* scales image to fill the screen */
     background-position: center; /* keeps it centered */
     background-repeat: no-repeat; /* stops it from tiling */
@@ -96,37 +96,4 @@ body {
 input[type = "number"] {
     width: 40px;
     height: 20px;
-}
-
-.qbtn {
-    display: inline-block;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
-    color: #b95a56;
-    text-decoration: none;
-    text-align: center;
-    padding: 14px 28px;
-    background: #f6d994;
-    border: none;
-    text-shadow: 1.5px 1.5px 0 #471e14;
-    cursor: pointer;
-
-    box-shadow:
-        0 0 0 4px #c47848,
-        0 0 0 7px #8d633c,
-        inset 4px 4px 0 rgba(103, 118, 95, 0.25),
-        inset -4px -4px 0 rgba(0, 0, 0, 0.35);
-}
-
-.qbtn:hover {
-    background: #ffffc0;
-}
-
-.wood-btn:active {
-    background: #a1652c;
-    box-shadow:
-        0 0 0 4px #3f2010,
-        0 0 0 4px #6b3a1a,
-        inset -4px -4px 0 rgba(255, 200, 130, 0.15),
-        inset 4px 4px 0 rgba(0, 0, 0, 0.35);
 }

@@ -26,36 +26,42 @@
                         }
                     });
                 </script>
-                <button class = "wood-btn" onclick = "nextQuestion()">Continue</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "Continue">Continue</button>
             </div>
 
-            <div class = "question" data-question = "2">
+            <div class = "question" data-question = "2"  id = "store">
                 <h2 class = "questions-font">Where are you getting seeds?</h2>
-                <button class = "wood-btn" onclick = "nextQuestion()">General Store</button>
-                <button class = "wood-btn" onclick = "nextQuestion()">Joja</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "General">General Store</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "Joja">Joja</button>
             </div>
 
-            <div class = "question" data-question = "3">
+            <div class = "question" data-question = "3"  id = "fertilizer">
                 <h2 class = "questions-font">Fertlizer?</h2>
-                <button class = "wood-btn" onclick = "nextQuestion()">Speed-Gro</button>
-                <button class = "wood-btn" onclick = "nextQuestion()">Deluxe Speed-Gro</button>
-                <button class = "wood-btn" onclick = "nextQuestion()">Hyper Speed-Gro</button>
-                <button class = "wood-btn" onclick = "nextQuestion()">None</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "Speed-Gro">Speed-Gro</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "Deluxe Speed-Gro">Deluxe Speed-Gro</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "Hyper Speed-Gro">Hyper Speed-Gro</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "null">None</button>
             </div>
 
-            <div class = "question" data-question = "4">
+            <div class = "question" data-question = "4" id = "multiseason">
                 <h2 class = "questions-font">Do you want it to grow through multiple seasons</h2>
-                <button class = "wood-btn" onclick = "nextQuestion()">Yes</button>
-                <button class = "wood-btn" onclick = "nextQuestion()">No</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "true">Yes</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "false">No</button>
             </div>
 
-            <div class = "question" data-question = "5">
+            <div class = "question" data-question = "5" id = "profession">
                 <h2 class = "questions-font">Do you have any of these professions?</h2>
-                <button class = "wood-btn" onclick = "nextQuestion()">Tiller</button>
-                <button class = "wood-btn" onclick = "nextQuestion()">Agriculturalist (must also have Tiller)</button>
-                <button class = "wood-btn" onclick = "nextQuestion()">Neither</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "Tiller">Tiller</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "Agriculturalist">Agriculturalist (must also have Tiller)</button>
+                <button class = "wood-btn" onclick = "nextQuestion(this)" value = "null">Neither</button>
             </div>
-        </div>
+            <div>
+                <main class = "board">
+                    <h1 class = "farm-title">Best Crops</h1>
+                    <ol class = "list" id = "list"></ol>
+                </main>
+            </div>
+        </div> 
         <script src = "script.js"></script>
     </body>
 </html>

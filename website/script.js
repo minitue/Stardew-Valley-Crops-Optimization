@@ -10,16 +10,6 @@ fetch("crops.json")
     console.log(ranked)
 });
 
-function getQuizData() {
-    const data = {
-        day: document.getElementById('day').value,
-        season: document.getElementById('season').value
-        
-    };
-
-    return data;
-}
-
 function qualifying_crops(crop_name, season) {
     const crop = crops_name[crop_name];
     if (!crop.season.includes(season)) {
@@ -67,9 +57,11 @@ function profit_calc(day, season, crop_name, store = 'General', fertilizer = nul
     // professions
     if (profession === 'Tiller') {
         sell_price = Math.floor(sell_price + (sell_price * 0.1));
-    }
-    if (profession === 'Agriculturist') {
+    } else if (profession === 'Agriculturist') {
         growth_days = Math.floor(growth_days * 0.9);
+        sell_price = Math.floor(sell_price + (sell_price * 0.1));
+    } else {
+        // do nothing
     }
 
     // multiple harvest
@@ -126,14 +118,48 @@ function rank_crop(day, season, store = 'General', fertilizer = null, multiseaso
 }
 
 let current = 1;
-function nextQuestion() {
+let quizData = {
+    day: document.getElementById('day').value,
+    season: document.getElementById('season').value
+}
+function nextQuestion(answer) {
+    const question = answer.closest(".question")
+    quizData[question.id] = answer.value;
     document.querySelector(`[data-question = "${current}"]`).classList.remove('active');
     current++;
-    const next = document.querySelector(`[data-question = "${current}"]`);
+    let next = document.querySelector(`[data-question = "${current}"]`);
     if (next) {
         next.classList.add('active');
     } else {
-        pass
-        // show result
+        renderList(showResult());
     }
+}
+
+function showResult() {
+    let multi;
+    if (quizData.multiseason == 'true') {
+        multi = true;
+    } else {
+        multi = false;
+    }
+    const result = rank_crop(
+        quizData.day,
+        quizData.season,
+        store = quizData.store,
+        fertilizer = quizData.fertilizer,
+        multiseason = multi,
+        profession = quizData.profession,
+    )
+    return result;
+}
+
+function renderList(items) {
+    let ol = document.getElementById("list");
+    ol.innerHTML = "";
+
+    for (const key of items.keys()) {
+        let li = document.createElement("li");
+        li.textContent = `${key} - ${items.key}`;
+        ol.appendChild(li);
+    };
 }
